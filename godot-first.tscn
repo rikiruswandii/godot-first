@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dot6e30pa1w5c"]
+[gd_scene load_steps=69 format=3 uid="uid://dot6e30pa1w5c"]
 
 [ext_resource type="Script" path="res://godot-first-script/godot-first.gd" id="1_fmfy7"]
 [ext_resource type="Texture2D" uid="uid://bcqqby5sv6s7q" path="res://Samurai/Attack_1.png" id="1_metsp"]
@@ -450,12 +450,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="TileSet" id="TileSet_gllu5"]
+
 [node name="MainNode" type="Node2D"]
 position = Vector2(-2, 1)
 script = ExtResource("1_fmfy7")
 
-[node name="Samurai" type="AnimatedSprite2D" parent="."]
+[node name="SamuraiBody" type="CharacterBody2D" parent="."]
+
+[node name="Samurai" type="AnimatedSprite2D" parent="SamuraiBody"]
 position = Vector2(68, 64)
 sprite_frames = SubResource("SpriteFrames_85a6j")
-animation = &"run"
-frame_progress = 0.148469
+animation = &"idle"
+frame_progress = 0.326861
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SamuraiBody"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_gllu5")
