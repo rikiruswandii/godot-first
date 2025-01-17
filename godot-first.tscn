@@ -458,4 +458,4 @@ script = ExtResource("1_fmfy7")
 position = Vector2(68, 64)
 sprite_frames = SubResource("SpriteFrames_85a6j")
 animation = &"run"
-frame_progress = 0.96604
+frame_progress = 0.148469
